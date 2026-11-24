@@ -9,6 +9,7 @@ import { buildAnalyticsReport, createAnalyticsWindow } from '../lib/analytics.js
 
 const normalizePhone = (value) => String(value || '').replace(/\D/g, '').replace(/^0/, '62');
 
+
 function normalizeBatch(body, id, fieldsFallback = []) {
   const { batch_name, program_type, description = '', start_date, end_date, quota = 0, training_fee = '', payment_instructions = '', is_active = false, fields = fieldsFallback } = body;
   if (String(batch_name || '').trim().length < 3 || !program_type || !start_date || !end_date || end_date < start_date) {

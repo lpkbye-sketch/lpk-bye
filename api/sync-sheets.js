@@ -8,6 +8,7 @@ function isAuthorized(req) {
   return req.headers.authorization === `Bearer ${secret}`;
 }
 
+
 export default async function handler(req, res) {
   if (!['GET', 'POST'].includes(req.method)) return methodNotAllowed(res);
   if (!isAuthorized(req)) return send(res, 401, { success: false, message: 'Akses sinkronisasi tidak diizinkan.' });

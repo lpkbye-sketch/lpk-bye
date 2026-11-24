@@ -69,6 +69,7 @@ export default async function handler(req, res) {
         reply = `Ringkasan LPK BYE\nTotal pendaftar: ${registrants.length}\nMenunggu verifikasi: ${pending}\nGelombang aktif: ${active}`;
       }
     }
+    
 
     await sendFonnte(sender, reply, inboxid);
     return send(res, 200, { success: true });
